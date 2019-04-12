@@ -8,7 +8,7 @@ Model based clustering for mass cytometry data.
 Parameter estimation for zero-inflated Gaussian mixture model.
 }
 \usage{
-mixtruncGaussEM(Y, X, L, muini, betaini, Sigmaini, tau, nu, Lambda, num_iter)
+mixtruncGaussEM(Y, X, L, muini, betaini, Sigmaini, wini, tau, nu, Lambda, num_iter)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -18,6 +18,7 @@ mixtruncGaussEM(Y, X, L, muini, betaini, Sigmaini, tau, nu, Lambda, num_iter)
   \item{muini}{initial value of mean parameters}
   \item{betaini}{inital value of coefficients parameters}
   \item{Sigmaini}{initial value of variance parameters}
+  \item{wini}{initial value of indicator of clusters}
   \item{tau}{precision parameter of Gauss-Wishart prior distribution}
   \item{nu}{degree of freedom parameter of Wishart prior distribution}
   \item{Lambda}{scale parameter of Wishart prior distribution}
