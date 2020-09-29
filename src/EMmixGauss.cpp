@@ -50,7 +50,7 @@ arma::vec myrunif(int d){
   return arma::randu(d);
 }
 
-arma::mat rtmvnorm_gibbs(arma::vec mu, arma::mat omega, arma::vec init_state){
+arma::vec rtmvnorm_gibbs(arma::vec mu, arma::mat omega, arma::vec init_state){
   // Rprintf("Start gibbs\n");
   int d = mu.n_elem; //check dimension of target distribution
   
@@ -90,25 +90,6 @@ arma::rowvec softmax(const arma::rowvec & x){
     res = res/sum(res);
   }
   return res;
-}
-
-arma::rowvec colSums(const arma::mat & X){
-  int nCols = X.n_cols;
-  arma::rowvec out(nCols);
-  for(int i = 0; i < nCols; i++){
-    out(i) = sum(X.col(i));
-  }
-  return(out);
-}
-
-arma::vec colMeans(const arma::mat & X){
-  int nCols = X.n_cols;
-  int nRows = X.n_rows;
-  arma::vec out(nCols);
-  for(int i = 0; i < nCols; i++){
-    out(i) = sum(X.col(i))/nRows;
-  }
-  return(out);
 }
 
 arma::vec triangl(const arma::mat& X){
@@ -402,7 +383,7 @@ Rcpp::List mixtruncGaussEM(const arma::mat & Y, const arma::mat & X, const int &
     for(int l=0;l<L;l++){
       mu.col(l) = weighted_colMeans(Z,W.col(l),tau);
     }
-    Sigma = sigma_updata(mu,Z,W,L,nu,Lambda);
+    Sigma = sigma_updata(Z,W,mu,L,nu,Lambda);
     pre_Z = Z;
   }
   return Rcpp::List::create(Rcpp::Named("beta")=beta,
