@@ -1,3 +1,4 @@
 useDynLib(LAMBDA, .registration=TRUE)
 importFrom(Rcpp, evalCpp)
+importFrom("stats", "kmeans", "var")
 exportPattern("^[[:alpha:]]+")
