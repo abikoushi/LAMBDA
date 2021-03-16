@@ -13,7 +13,7 @@ arma::rowvec rcate(const arma::rowvec & p){
     x[0] = 1;
   }else{
     for(int k=1; k<K; k++){
-      if(cump[k-1]<U & U<=cump[k]){
+      if((cump[k-1]<U) & (U<=cump[k])){
         x[k] = 1;
       }
     }

@@ -1,11 +1,16 @@
 Package: LAMBDA
 Type: Package
-Title: What the package does (short line)
+Title: LAMBDA, Latent Allocation Model with Bayesian Data Analysis
 Version: 1.0
 Date: 2019-04-12
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
+Author: Ko Abe [aut, cre], Teppei Shimamura  [aut, cre]
+Maintainer: Ko Abe <ko.abe@med.nagoya-u.ac.jp>
+Description: LAMBDA (Latent Allocation Model with Bayesian Data Analysis), for 
+    simultaneous identification of unknown cell populations and discovery of 
+    associations between these populations and clinical information. LAMBDA
+    uses specified probabilistic models designed for modeling the different 
+    distribution information for flow or mass cytometry data, respectively. 
+    Moreover, LAMBDA uses a zero-inflated distribution for the mass cytometry.
 License: What license is it under?
 Imports: Rcpp (>= 1.0.1)
 LinkingTo: Rcpp, RcppArmadillo
